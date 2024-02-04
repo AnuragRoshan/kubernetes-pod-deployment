@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-app-deployment
+spec:
+  template:
+    metadata:
+      name: simple-node-app-service
+      labels:
+        app: simple-node-app
+    spec:
+      containers:
+        - name: simple-node-app-con
+          image: anurag15/simple-node-app
+          ports:
+            - containerPort: 5000
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-node-app

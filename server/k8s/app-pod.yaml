@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod # Ensure 'Pod' is lowercase
+metadata:
+  name: simple-node-app
+  labels:
+    app: simple-node-app
+spec:
+  containers:
+    - name: simple-node-app-con
+      image: anurag15/simple-node-app
+      ports:
+        - containerPort: 5000
